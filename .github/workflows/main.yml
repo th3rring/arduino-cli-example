@@ -49,10 +49,6 @@ jobs:
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.0.0
 
-      - name: Install libraries
-        run: |
-          cp ApolloBVM/ /home/runner/Arduino -r
-          arduino-cli lib list
 
       # We then install the platform, which one will be determined
       # dynamically by the build matrix.
@@ -60,6 +56,11 @@ jobs:
         run: |
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
+
+      - name: Install libraries
+        run: |
+          cp ApolloBVM/ /home/runner/Arduino -r
+          arduino-cli lib list
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
       - name: Compile Sketch

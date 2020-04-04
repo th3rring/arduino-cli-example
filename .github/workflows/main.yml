@@ -50,7 +50,7 @@ jobs:
         uses: arduino/setup-arduino-cli@v1.0.0
 
       - name: Install libraries
-        run: ls
+        run: ls ~
 
       # We then install the platform, which one will be determined
       # dynamically by the build matrix.

@@ -20,7 +20,7 @@ SplashPanel* splash_ptr;
 SplashPanel* warning_ptr;
 EditPanel* start_ptr;
 EditPanel* apply_ptr;
-RunningPanel* run_ptr
+RunningPanel* run_ptr;
 PausePanel* pause_ptr;
 
 Panel* cur_panel;

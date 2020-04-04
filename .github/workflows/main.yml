@@ -30,8 +30,8 @@ jobs:
         include:
           # This works like this: when the platformn is "arduino:samd", the
           # variable `fqbn` is set to "arduino:samd:nano_33_iot".
-          - arduino-platform: "arduino:samd"
-            fqbn: "arduino:samd:nano_33_iot"
+          #- arduino-platform: "arduino:samd"
+            #fqbn: "arduino:samd:nano_33_iot"
           - arduino-platform: "arduino:avr"
             fqbn: "arduino:avr:unowifi"
 
@@ -58,6 +58,8 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install ${{ matrix.arduino-platform }}
           arduino-cli lib install Encoder
+          arduino-cli lib install Servo
+          arduino-cli lib install Wire
 
       - name: Install libraries
         run: |

@@ -59,7 +59,8 @@ jobs:
 
       - name: Install libraries
         run: |
-          cp ApolloBVM/ /home/runner/Arduino/libraries -r
+          mkdir /home/runner/Arduino/libraries
+          cp ApolloBVM/ /home/runner/Arduino/libraries/ -r
           arduino-cli lib list
       # Finally, we compile the sketch, using the FQBN that was set
       # in the build matrix.
